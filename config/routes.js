@@ -1,4 +1,7 @@
 const axios = require('axios');
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const db = require("../database/dbConfig.js");
 
 const { authenticate } = require('../auth/authenticate');
 
@@ -8,13 +11,17 @@ module.exports = server => {
   server.get('/api/jokes', authenticate, getJokes);
 };
 
+
+
 function register(req, res) {
-  // implement user registration
+ 
 }
 
 function login(req, res) {
   // implement user login
-}
+ 
+ }
+
 
 function getJokes(req, res) {
   const requestOptions = {
